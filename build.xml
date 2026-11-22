@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="FinControl" default="jar" basedir=".">
+    <property file="nbproject/project.properties"/>
+
+    <!-- Driver JDBC do MySQL (MySQL Connector/J) -->
+    <path id="bibliotecas">
+        <fileset dir="lib" includes="*.jar"/>
+    </path>
+
+    <target name="compile" description="Compila os fontes Java">
+        <mkdir dir="${classes.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" release="${java.release}"
+               encoding="UTF-8" includeantruntime="false" classpathref="bibliotecas"/>
+    </target>
+
+    <target name="jar" depends="compile" description="Gera um JAR executável (com o driver do MySQL dentro)">
+        <mkdir dir="${dist.dir}"/>
+        <jar destfile="${dist.dir}/FinControl.jar" basedir="${classes.dir}">
+            <zipgroupfileset dir="lib" includes="*.jar"/>
+            <manifest>
+                <attribute name="Main-Class" value="${main.class}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <!-- Executa na pasta do projeto, onde fica o db.properties -->
+    <target name="run" depends="jar" description="Abre a janela Swing">
+        <java jar="${dist.dir}/FinControl.jar" fork="true" failonerror="true" dir="${basedir}"/>
+    </target>
+
+    <target name="clean" description="Remove os arquivos gerados">
+        <delete dir="${build.dir}"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+</project>

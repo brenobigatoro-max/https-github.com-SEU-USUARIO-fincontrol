@@ -1,0 +1,35 @@
+package br.com.fincontrol.model;
+
+/**
+ * Categoria de uma transação, por exemplo "Salário" (Receita)
+ * ou "Alimentação" (Despesa).
+ */
+public class Categoria {
+
+    private int id;
+    private String nome;
+    private String tipo; // "Receita" ou "Despesa"
+
+    public Categoria(int id, String nome, String tipo) {
+        this.id = id;
+        this.nome = nome;
+        this.tipo = tipo;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    @Override
+    public String toString() {
+        return nome;
+    }
+}

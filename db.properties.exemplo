@@ -1,0 +1,6 @@
+# Conexão do FinControl com o MySQL.
+# O usuário "fincontrol" é criado pelo script sql/fincontrol.sql.
+# Se o seu MySQL usa outra porta (padrão 3306), mude na URL.
+url=jdbc:mysql://localhost:3306/FinControlDB?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Sao_Paulo&characterEncoding=UTF-8
+usuario=fincontrol
+senha=COLOQUE_A_SENHA_AQUI

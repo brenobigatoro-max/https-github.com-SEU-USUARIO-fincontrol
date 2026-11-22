@@ -1,0 +1,11 @@
+# Arquivos gerados pelo NetBeans / Ant
+build/
+dist/
+nbproject/private/
+
+# Configuração local do banco (tem senha) — use db.properties.exemplo como modelo
+db.properties
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
