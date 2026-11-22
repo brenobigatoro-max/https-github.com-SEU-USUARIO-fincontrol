@@ -4,6 +4,8 @@
 
 Projeto Integrador do curso de Desenvolvimento de Sistemas — SENAC.
 
+Repositório: [FinControl no GitHub](https://github.com/brenobigatoro-max/https-github.com-SEU-USUARIO-fincontrol).
+
 ## Status do projeto
 
 🚧 **Em desenvolvimento**
@@ -14,7 +16,7 @@ Projeto Integrador do curso de Desenvolvimento de Sistemas — SENAC.
 | 2 | Projeto de interfaces (UX/UI) no Figma | Concluída |
 | 3 | Telas em Java Swing com dados simulados | Concluída |
 | 4 | Integração com o banco de dados MySQL | Concluída |
-| 5 | Versionamento no GitHub | Em andamento |
+| 5 | Versionamento no GitHub | Repositório publicado |
 
 ## Objetivo do software
 
@@ -50,7 +52,7 @@ Há dois perfis:
 
 | Código | Requisito | Descrição | Situação |
 |---|---|---|---|
-| RNF001 | Segurança de dados | As senhas são guardadas criptografadas, como hash SHA-256 | ✅ Implementado |
+| RNF001 | Segurança de dados | As senhas são armazenadas como hash SHA-256 | ✅ Implementado |
 | RNF002 | Usabilidade | Telas simples, com atalhos de teclado e mensagens de erro claras | ✅ Implementado |
 | RNF003 | Desempenho | Consultas rápidas, com índice nas buscas por usuário e data | ✅ Implementado |
 | RNF004 | Integridade dos dados | Chaves estrangeiras entre transações, usuários e categorias | ✅ Implementado |
@@ -136,3 +138,17 @@ fincontrol/
 
 ![Painel financeiro](docs/telas/02-despesa-gravada-no-banco.png)
 ![Gerenciar usuários](docs/telas/03-usuarios-do-banco.png)
+
+## Versionamento
+
+O código-fonte, o script SQL, o modelo do Workbench, o driver JDBC e a documentação
+estão versionados neste repositório. O arquivo `db.properties`, com a configuração
+local de conexão, e os arquivos gerados pela compilação ficam fora do Git.
+
+Antes de iniciar uma alteração, sincronize a pasta local com `git pull --ff-only origin main`.
+Depois de revisar as mudanças, registre-as com `git add` e `git commit` e envie o
+commit com `git push origin main`.
+
+O texto do período no painel acompanha o filtro escolhido: sem datas, todas as
+transações; apenas data inicial, "Desde"; apenas data final, "Até"; duas datas,
+o intervalo completo.

@@ -257,9 +257,12 @@ public class TelaPainel extends JPanel {
         despesas.setText("− " + Tema.moeda(totalDespesas));
         if (inicio == null && fim == null) {
             periodo.setText("Mostrando todas as transações");
+        } else if (fim == null) {
+            periodo.setText("Desde " + inicio.format(Tema.DATA));
+        } else if (inicio == null) {
+            periodo.setText("Até " + fim.format(Tema.DATA));
         } else {
-            periodo.setText("Período: " + (inicio == null ? "início" : inicio.format(Tema.DATA))
-                    + " até " + (fim == null ? "hoje" : fim.format(Tema.DATA)));
+            periodo.setText("Período: " + inicio.format(Tema.DATA) + " até " + fim.format(Tema.DATA));
         }
         vazio.setVisible(lista.isEmpty());
     }
